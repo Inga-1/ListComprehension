@@ -41,5 +41,35 @@ nested_list = [[1, 2, 3], [4, 5], [6, 7, 8, 9]]
 #Doubled Values: Given a list of numbers, create a new list where each number is doubled using list comprehension.
 def doubleVals(lista):
     return [item*2 for item in lista]
-print(doubleVals([1, 2, 3, 4]))
-     
+
+#Double Elements: Given a list of elements, create a new list where each element is present twice using list comprehension 
+def doubleElems(lista):
+    return [item for item in lista for n in range(2)]
+
+#Creating a list of Tuples from two separate Lists (creating tuples with every single possible pairing)
+def createTuples(lista1, lista2):
+    return [(x, y) for x in lista1 for y in lista2]
+
+#Creating a list of Tuples from two separate Lists (matching each element to the one in the same position in the other one)
+def createTuples(lista1, lista2):
+    return [(x, y) for x, y in zip(lista1, lista2)]
+
+#return a list containing the numbers of the given list cubed 
+def cube(lista):
+    return [x**3 for x in lista]
+
+#-------------------MATRICES------------------------------------
+#Find the transpose of a matrix 
+def transposeOfMatrix(matrix):
+    return [[i[j] for i in matrix] for j in range(len(matrix[0]))]
+
+#Rotate to the matrix opposite to clockwise direction
+def reverseMatrix(matrix):
+    return [[i[j] for i in matrix] for j in range(len(matrix[0])-1, -1, -1)]
+
+
+matrix = [[10, 20, 30], 
+              [40, 50, 60], 
+              [70, 80, 90]]
+print((reverseMatrix(matrix)))
+
